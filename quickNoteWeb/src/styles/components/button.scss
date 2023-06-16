@@ -1,0 +1,32 @@
+@import '../variables.scss';
+
+button {
+    outline: none;
+    transition: background-color 0.3s ease;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.button-primary {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.button-primary {
+    border: none;
+    background-color: $primary-color;
+    color: $light;
+
+    &:hover {
+        background-color: $primary-color-dark;
+    }
+
+    &:active {
+        background-color: $primary-color-light;
+    }
+
+
+}

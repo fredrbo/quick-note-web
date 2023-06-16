@@ -1,0 +1,32 @@
+@import '../variables.scss';
+
+input {
+    outline: none;
+}
+
+.inp-text
+{
+padding: 9px 15px;
+border-radius: 5px;
+
+}
+
+.inp-text {
+    color: $dark;
+
+    &:placeholder-shown {
+        border: 1px solid $dark-light;
+
+    }
+
+    &:not(placeholder-shown),
+    :focus {
+        border: 2px solid $dark;
+
+    }
+
+    &:read-only {
+        background-color: $dark-light;
+        cursor: not-allowed;
+    }
+}
