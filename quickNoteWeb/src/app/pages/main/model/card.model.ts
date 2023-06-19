@@ -1,9 +1,10 @@
 export class Card{
+    id: number;
     title: string;
-    items?: CardItem[]
+    items?: ICardItem[]
 }
 
-export class CardItem{
+export interface ICardItem{
     title: string;
     description: string;
 }

@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { MatInputModule } from '@angular/material/input';
 import { MainComponent } from './pages/main/main.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MainComponent } from './pages/main/main.component';
     MatInputModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    DragDropModule,
     FormsModule
   ],
   providers: [],
