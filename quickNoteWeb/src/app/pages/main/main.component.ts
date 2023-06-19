@@ -14,30 +14,28 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  toDoItems: ICardItem[] = [
-    { title: "123", description: "Na tela home incluir tudo isso" },
-    { title: "456", description: "Definir estrutura do banco" },
-    { title: "789", description: "Definir estruasdastura do banco" },
-  ];
-  
-  doingItems: ICardItem[] = [
-    { title: "abc", description: "Na tela login tem que ter 2 inputs" },
-    { title: "def", description: "Na tela login tem que ter 2 inputs" },
-  ];
-  doItems: ICardItem[] = [
-    { title: "feito", description: "Na tela login tem que ter 2 inputs" },
 
-  ];
+  cards: Card[] = [ 
+    {id: 1, title: "TO DO", items: [
+      { title: "123", description: "Na tela home incluir tudo isso" },
+      { title: "456", description: "Definir estrutura do banco" },
+      { title: "789", description: "Definir estruasdastura do banco" },
+    ]},
+    {id: 2, title: "Doing", items: [
+      { title: "abc", description: "Na tela home incluir tudo isso" },
+      { title: "def", description: "Definir estrutura do banco" },
+      { title: "ghi", description: "Definir estruasdastura do banco" },
+    ]},
+    {id: 3, title: "DO", items: [
+      { title: "!@#", description: "Na tela home incluir tudo isso" },
+      { title: "d$#@!", description: "Definir estrutura do banco" },
+    ]},
+  ]
 
-
-
-
-  drop(event: CdkDragDrop<ICardItem[]>) {
+  drop(event:any) {
     if (event.previousContainer === event.container) {
-      // Movendo o item dentro da mesma coluna
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      // Transferindo o item de uma coluna para outra
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
