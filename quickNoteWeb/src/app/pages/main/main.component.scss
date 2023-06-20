@@ -1,0 +1,45 @@
+@import "../../../styles/variables.scss";
+
+.title {
+    .bi {
+        color: red;
+        position: absolute;
+        font-size: 18px;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+.card-item {
+
+
+    .item {
+        input {
+            width: 100%;
+            border: none;
+            padding: 4px 10px;
+        }
+
+        text-align: start;
+        background-color: transparent;
+        border: 1px solid $dark-light;
+
+        i {
+            font-size: 16px;
+            margin: 0px 4px;
+        }
+
+        .description {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 85%;
+        }
+    }
+
+}
+
+.addItem {
+    color: $primary-color;
+    font-size: 20px;
+}

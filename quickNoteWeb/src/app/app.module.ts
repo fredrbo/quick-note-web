@@ -8,13 +8,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { MatInputModule } from '@angular/material/input';
 import { MainComponent } from './pages/main/main.component';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalCardComponent } from './shared-components/modal-card/modal-card.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MainComponent
+    MainComponent,
+    ModalCardComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     AppRoutingModule,
     BrowserAnimationsModule,
     DragDropModule,
-    FormsModule
+    MatDialogModule,
+    FormsModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

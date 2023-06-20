@@ -1,3 +1,4 @@
+import { ModalService } from './../../_services/modal.service';
 import { Component, OnInit } from '@angular/core';
 import { Card, ICardItem } from './model/card.model';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
@@ -9,30 +10,48 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: ModalService) { }
 
   ngOnInit(): void {
   }
 
 
-  cards: Card[] = [ 
-    {id: 1, title: "TO DO", items: [
-      { title: "123", description: "Na tela home incluir tudo isso" },
-      { title: "456", description: "Definir estrutura do banco" },
-      { title: "789", description: "Definir estruasdastura do banco" },
-    ]},
-    {id: 2, title: "Doing", items: [
-      { title: "abc", description: "Na tela home incluir tudo isso" },
-      { title: "def", description: "Definir estrutura do banco" },
-      { title: "ghi", description: "Definir estruasdastura do banco" },
-    ]},
-    {id: 3, title: "DO", items: [
-      { title: "!@#", description: "Na tela home incluir tudo isso" },
-      { title: "d$#@!", description: "Definir estrutura do banco" },
-    ]},
+  cards: Card[] = [
+    {
+      title: "TO DO", items: [
+        { title: "123", description: "Na tela home incluir tudo isso ASDJKPAOSDK ASKD POAKSD OPKSA" },
+        { title: "456", description: "Definir estrutura do banco" },
+        { title: "789", description: "Definir estruasdastura do banco" },
+      ]
+    },
+    {
+      title: "Doing", items: [
+        { title: "abc", description: "Na tela home incluir tudo isso" },
+        { title: "def", description: "Definir estrutura do banco" },
+        { title: "ghi", description: "Definir estruasdastura do banco" },
+      ]
+    },
+    {
+      title: "DO", items: [
+        { title: "!@#", description: "Na tela home incluir tudo isso" },
+        { title: "d$#@!", description: "Definir estrutura do banco" },
+      ]
+    },
   ]
 
-  drop(event:any) {
+  createCard() {
+    this.cards.push({
+      title: "Novo card"
+    })
+  }
+
+  createItem(card: Card) {
+    card.items?.push({
+      title: "Novo card"
+    })
+  }
+
+  drop(event: any) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -44,7 +63,9 @@ export class MainComponent implements OnInit {
       );
     }
   }
-  
 
+  openModalItem(item: ICardItem) {
+    const dialogRef = this.modalService.openDialogConfirm(item)
+  }
 
 }

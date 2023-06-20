@@ -1,3 +1,9 @@
 @import "./components/button.scss";
 @import "./components/input.scss";
 @import "./components/card.scss";
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.pointer {
+    cursor: pointer;
+}
